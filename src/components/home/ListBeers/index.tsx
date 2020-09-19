@@ -1,12 +1,11 @@
-import React, {useContext} from "react";
+import React  from "react";
 import useBeers from "components/home/ListBeers/useBeers";
 import ListOfItems from "components/commons/ListOfItems";
 import ListBeerItem from "components/home/ListBeers/ListBeerItem";
-import CartContext from "utils/CartContext";
+import { addToCart } from "utils/cartSlice";
 
 
 function ListBeers() {
-  const { addToCart }:any = useContext(CartContext);
   const [beers] = useBeers();
 
   return (

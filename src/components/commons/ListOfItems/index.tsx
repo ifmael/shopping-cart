@@ -16,7 +16,8 @@ function ListOfItems({ items, Element, actions, loading, grid }: ListOfItemsProp
   return showList === true ? (
     <ul className={grid ? styles.grid : styles.list}>
       {items.map((item) => {
-        const { id } = item;
+        const { id } = grid ? item : item.item;
+        
         return (
           <li key={id} className={grid ? styles.gridItem : styles.listItem}>
             <Element item={item} {...actions} />
