@@ -12,7 +12,9 @@ function Header() {
           🍺🍺
         </span>
       </Link>
-      <CartIcon />
+      <div className={styles.shoppingCart} >
+        <CartIcon />
+      </div>
     </header>
   );
 }

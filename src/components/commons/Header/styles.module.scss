@@ -2,9 +2,15 @@
   display: flex;
   background-color: black;
   color: white;
-  min-width: 10rem;
-  padding: 1rem;
   align-items: center;
+  min-width: 30rem;
+  padding: 1rem;
+
+  @media (max-width:580px ){
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .link{
@@ -15,3 +21,15 @@
     color: white;
   }
 }
+
+.shoppingCart{
+  margin-left:auto;
+
+  @media (max-width:580px ){
+    margin-top: .5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+
