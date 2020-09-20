@@ -1,7 +1,7 @@
-import React from "react";
-import ListCart from "components/shopping-cart/ListCart";
+import React from 'react';
+import ListCart from 'components/shopping-cart/ListCart';
 
-function ShoppingCart() {
+function ShoppingCart(): JSX.Element {
   return (
     <section>
       <ListCart />

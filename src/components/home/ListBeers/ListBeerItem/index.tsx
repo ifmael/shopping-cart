@@ -1,15 +1,15 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import IBeer from "models/IBeer";
-import styles from "./styles.module.scss";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import IBeer from 'models/IBeer';
+import styles from './styles.module.scss';
 
 interface ListOfItemsProps {
-  item: IBeer,
-  addToCart: any,
-};
+  item: IBeer;
+  addToCart: any;
+}
 
-function ListBeerItem({ item, addToCart }:ListOfItemsProps) {
-  const { name, image_url }: { name: string, image_url: string } = item;
+function ListBeerItem({ item, addToCart }: ListOfItemsProps): JSX.Element {
+  const { name, image_url }: { name: string; image_url: string } = item;
   const dispatch = useDispatch();
 
   return (

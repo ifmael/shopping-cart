@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import CartIcon from "components/commons/CartIcon";
-import styles from "./styles.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import CartIcon from 'components/commons/CartIcon';
+import styles from './styles.module.scss';
 
-function Header() {
+function Header(): JSX.Element {
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.link}>
@@ -12,7 +12,7 @@ function Header() {
           🍺🍺
         </span>
       </Link>
-      <div className={styles.shoppingCart} >
+      <div className={styles.shoppingCart}>
         <CartIcon />
       </div>
     </header>

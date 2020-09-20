@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getBeersStore, setBeersStore } from "utils/beerSlice";
-import IBeer from "models/IBeer";
-import API from "config/api";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getBeersStore, setBeersStore } from 'utils/beerSlice';
+import IBeer from 'models/IBeer';
+import API from 'config/api';
 
 function useBeers(): IBeer[][] {
-  const beersStore:IBeer[] | any[] = useSelector(getBeersStore);
+  const beersStore: IBeer[] = useSelector(getBeersStore);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,9 +13,11 @@ function useBeers(): IBeer[][] {
       try {
         const beersRaw: Response = await fetch(API);
         const randomBeers: any[] = await beersRaw.json();
-        const beersFiltered:IBeer[] = randomBeers.map(({id, name, image_url}:IBeer):IBeer => {
-          return {id, name, image_url};
-        });
+        const beersFiltered: IBeer[] = randomBeers.map(
+          ({ id, name, image_url }: IBeer): IBeer => {
+            return { id, name, image_url };
+          },
+        );
 
         dispatch(setBeersStore(beersFiltered));
       } catch (error) {
@@ -28,7 +30,7 @@ function useBeers(): IBeer[][] {
     getBeersFromAPI();
   }, [beersStore, dispatch]);
 
-  return [ beersStore ];
+  return [beersStore];
 }
 
 export default useBeers;

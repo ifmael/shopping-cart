@@ -1,19 +1,18 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import ICartItem from "models/ICartItem";
-import styles from "./styles.module.scss";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import ICartItem from 'models/ICartItem';
+import styles from './styles.module.scss';
 
-interface ListCartItemProps  {
-  item: ICartItem,
-  removeFromCart: any,
-};
+interface ListCartItemProps {
+  item: ICartItem;
+  removeFromCart: any;
+}
 
-
-function ListCartItem({ item, removeFromCart }: ListCartItemProps) {
+function ListCartItem({ item, removeFromCart }: ListCartItemProps): JSX.Element {
   const {
     item: { id, name, image_url },
     count,
-  }:ICartItem = item;
+  }: ICartItem = item;
   const dispatch = useDispatch();
 
   return (
