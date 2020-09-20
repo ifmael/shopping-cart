@@ -2,11 +2,12 @@ import React  from "react";
 import useBeers from "components/home/ListBeers/useBeers";
 import ListOfItems from "components/commons/ListOfItems";
 import ListBeerItem from "components/home/ListBeers/ListBeerItem";
+import IBeer from "models/IBeer";
 import { addToCart } from "utils/cartSlice";
 
 
 function ListBeers() {
-  const [beers] = useBeers();
+  const [beers]:IBeer[][] = useBeers();
 
   return (
     <ListOfItems

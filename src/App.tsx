@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "pages/Home";
 import ShoppingCart from "pages/ShoppingCart";
 import MainLayout from "layouts/MainLayout";
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
       <Router>
         <MainLayout>
           <Switch>
@@ -20,8 +18,6 @@ function App() {
           </Switch>
           </MainLayout>
       </Router>
-      
-    </div>
   );
 }
 

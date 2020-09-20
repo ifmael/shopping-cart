@@ -1,26 +1,28 @@
 import React from "react";
+import IBeer from "models/IBeer";
+import ICartItem from "models/ICartItem";
 import styles from "./styles.module.scss";
 
-type ListOfItemsProps = {
-  items: Array<any>,
+interface ListOfItemsProps {
+  items: (IBeer| ICartItem)[],
   Element: any,
-  actions: any,
+  actions: object,
   loading: boolean,
   grid: boolean
 };
 
 
 function ListOfItems({ items, Element, actions, loading, grid }: ListOfItemsProps) {
-  const showList = items && items.length > 0;
+  const showList:boolean = items && items.length > 0;
 
   return showList === true ? (
     <ul className={grid ? styles.grid : styles.list}>
-      {items.map((item) => {
+      {items.map((item:any) => {
         const { id } = grid ? item : item.item;
         
         return (
           <li key={id} className={grid ? styles.gridItem : styles.listItem}>
-            <Element item={item} {...actions} />
+            <Element item={item} {...actions} /> 
           </li>
         );
       })}

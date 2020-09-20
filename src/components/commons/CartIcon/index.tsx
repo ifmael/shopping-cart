@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { cartCount } from "utils/cartSlice";
+import ICartItem from "models/ICartItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.scss";
 
 function CartIcon() {
-  const cart:any[] = useSelector(cartCount);
-  const countItems = cart.reduce((acc:any, item:any) => acc + item.count, 0);
+  const cart:ICartItem[] = useSelector(cartCount);
+  const countItems:number = cart.reduce((acc:number, item:ICartItem) => acc + item.count, 0);
 
   return (
     <Link to="/shopping-cart" className={styles.cartIcon}>

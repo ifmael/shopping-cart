@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import ICartItem from "models/ICartItem";
 import styles from "./styles.module.scss";
 
-type ListCartItemProps = {
-  item: any,
+interface ListCartItemProps  {
+  item: ICartItem,
   removeFromCart: any,
 };
 
@@ -12,7 +13,7 @@ function ListCartItem({ item, removeFromCart }: ListCartItemProps) {
   const {
     item: { id, name, image_url },
     count,
-  } = item;
+  }:ICartItem = item;
   const dispatch = useDispatch();
 
   return (

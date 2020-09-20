@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ICartItem from "models/ICartItem";
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState: [],
   reducers: {
-    addToCart: (state:any, action):any => {
+    addToCart: (state:any, action:any):any => {
       const { id } = action.payload;
       let found = false;
       
@@ -32,6 +33,6 @@ export const cartSlice = createSlice({
 });
 
 export const { addToCart, removeFromCart } = cartSlice.actions;
-export const cartCount = (state:any) => state.cart;
+export const cartCount:(state:any)=>ICartItem[] = (state:any) => state.cart;
 
 export default cartSlice.reducer;

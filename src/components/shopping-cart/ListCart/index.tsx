@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 import { cartCount, removeFromCart } from "utils/cartSlice";
 import ListOfItems from "components/commons/ListOfItems";
 import ListCartItem from "components/shopping-cart/ListCart/ListCartItem";
+import ICartItem from "models/ICartItem";
 
 function ListCart() {
-  const cart = useSelector(cartCount);
+  const cart:ICartItem[] = useSelector(cartCount);
 
   return (
     <ListOfItems
